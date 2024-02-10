@@ -1,9 +1,11 @@
+import AllUsers from "../../component/allUsers/AllUsers";
 
 
 const Home = () => {
+
     return (
         <div>
-            this is home
+            <AllUsers/>
         </div>
     );
 };
