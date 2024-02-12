@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useUsersData = () => {
 
     const[ allUsers, setAllUsers] = useState([])
-    console.log(allUsers);
+    // console.log(allUsers);
 
     useEffect(() =>{
         fetch('https://dummyjson.com/users')

@@ -2,6 +2,7 @@ import { useState } from "react";
 import UserCard from "./UserCard";
 import useUsersData from "../../Hooks/useUsersData";
 import { CiSearch } from "react-icons/ci";
+import CreateUserForm from "../UserForm/CreateUserForm";
 
 const AllUsers = () => {
   const [searchName, setSearchName] = useState("");
@@ -32,6 +33,8 @@ const AllUsers = () => {
     setSortBy(e.target.value);
   };
 
+ 
+
   return (
     <div className="py-10">
       <h2 className="mb-10 text-5xl text-center font-semibold">All Users</h2>
@@ -42,9 +45,9 @@ const AllUsers = () => {
             placeholder="Search by name"
             value={searchName}
             onChange={handleSearchChange}
-            className="px-4 py-3  border rounded-md rounded-r-none focus:outline-none focus:border-red-500"
+            className="px-4 py-[11px]  border rounded-md rounded-r-none focus:outline-none focus:border-red-500"
           />
-          <button className="btn mr-5 rounded-l-none border-none bg-red-600">
+          <button className="btn mr-5 rounded-l-none outline-none border-none bg-red-600">
             
             <CiSearch className=" text-white text-xl"></CiSearch>
           </button>
@@ -68,8 +71,7 @@ const AllUsers = () => {
         ))}
       </div>
       <div className="text-center my-10">
-        <h2 className="text-5xl font-semibold"> Create User Form</h2>
-       
+       <CreateUserForm></CreateUserForm>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
+import { MdForwardToInbox } from "react-icons/md";
 
 const UserCard = ({ user }) => {
   const { id, image, firstName, lastName, email } = user;
@@ -12,16 +13,20 @@ const UserCard = ({ user }) => {
         </figure>
         <div className="text-center  pt-10  h-48">
           <Link to={`userDetails/${id}`}>
-            <h2 className="card-title justify-center text-center mb-2 hover:text-red-600 hover:underline">
-              Name: {firstName} {lastName}
+            <h2 className="card-title text-2xl justify-center text-center mb-2 hover:text-blue-600 hover:underline">
+               {firstName} {lastName}
             </h2>
           </Link>
         
-          <h2 className="font-bold">Company: {user?.company?.name} </h2>
+          <h2 className="font-medium">{user?.company?.name} </h2>
           <div className="card-actions items-center text-center gap-0 flex-col">
-          <p>Email: {email}</p>
+          
+          <div className="flex items-center gap-2">
+           <span className=""><MdForwardToInbox className="text-xl text-red-500 "></MdForwardToInbox></span>
+           <p>{email}</p>
+           </div>
            <div className="flex items-center gap-2">
-           <span className=""><CiLocationOn className="text-xl text-red-600 font-bold"></CiLocationOn></span>
+           <span className=""><CiLocationOn className="text-2xl text-red-600 font-extrabold"></CiLocationOn></span>
             <p>
                {user?.address.address},{user?.address?.city}
             </p>
