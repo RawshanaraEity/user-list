@@ -14,7 +14,7 @@ const CreateUserForm = () => {
         const user = {image, firstName, lastName, email, address, companyName}
         // console.log(user)
     
-        fetch('https://dummyjson.com/post', {
+        fetch('https://dummyjson.com/user/post', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
