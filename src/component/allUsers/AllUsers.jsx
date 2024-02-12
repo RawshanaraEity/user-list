@@ -36,7 +36,7 @@ const AllUsers = () => {
  
 
   return (
-    <div className="py-10">
+    <div className="py-10 container mx-auto">
       <div className="mb-4 mx-5 py-5 flex flex-col md:flex-row justify-between items-center text-center">
         <div className="flex flex-col md:flex-row justify-left ">
             {/* search field */}
@@ -46,7 +46,7 @@ const AllUsers = () => {
             placeholder="Search by name"
             value={searchName}
             onChange={handleSearchChange}
-            className="px-4 py-[11px]  border rounded-md rounded-r-none focus:outline-none focus:border-red-500"
+            className="px-4 py-[11px]  border rounded-md rounded-r-none focus:outline-none border-red-600"
           />
           <button className="btn mr-5 rounded-l-none outline-none border-none bg-red-600">
             
@@ -58,7 +58,7 @@ const AllUsers = () => {
           <select
             value={sortBy}
             onChange={handleSortChange}
-            className="lg:ml-2 px-4 py-3 mt-3 md:mt-0 border rounded-md focus:outline-none focus:border-red-500"
+            className="lg:ml-2 px-4 py-3 mt-3 md:mt-0 border rounded-md focus:outline-none border-red-600"
           >
             <option value="">Default</option>
             <option value="firstName">Name</option>
@@ -70,7 +70,7 @@ const AllUsers = () => {
         {/* create user form */}
         <div>
         <button
-            className="btn rounded bg-transparent border-red-600 text-lg  px-5 mt-3 md:mt-0"
+            className="btn rounded bg-transparent border-red-600 hover:bg-red-600 hover:text-white text-lg  px-5 mt-3 md:mt-0"
             onClick={() => document.getElementById("my_modal_3").showModal()}
           >
            Create User

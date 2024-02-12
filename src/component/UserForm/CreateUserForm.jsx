@@ -30,24 +30,24 @@ const CreateUserForm = () => {
 
     return (
         <div>
-             <h2 className="text-2xl md:text-4xl mb-5 font-semibold"> Create User Form</h2>
+             <h2 className="text-2xl md:text-3xl mb-5 w-2/5 p-2 mx-auto rounded-md font-semibold border border-red-600"> Create User</h2>
         <form
        onSubmit={handleAddUser}
-        className="max-w-xl p-5 mx-5 border hover:shadow-xl rounded-xl md:mx-auto space-y-4"
+        className="max-w-xl p-5 mx-5 rounded-md md:mx-auto space-y-4"
       >
         <div className="flex gap-5">
         <input
           type="text"
           placeholder="First Name"
           name="firstName"
-          className="input input-bordered w-full"
+          className="input input-bordered rounded-md w-full"
           required
         />
         <input
           type="text"
           placeholder="Last Name"
           name="lastName"
-          className="input input-bordered w-full"
+          className="input input-bordered rounded-md w-full"
           required
         />
         </div>
@@ -55,14 +55,14 @@ const CreateUserForm = () => {
           type="url"
           placeholder="Image(URL)"
           name="image"
-          className="input input-bordered w-full"
+          className="input input-bordered rounded-md w-full"
           required
         />
         <input
           type="email"
           placeholder="Email"
           name="email"
-          className="input input-bordered w-full"
+          className="input input-bordered rounded-md w-full"
           required
         />
 
@@ -70,7 +70,7 @@ const CreateUserForm = () => {
           type="text"
           placeholder="Address(Street, Suite, City)"
           name="address"
-          className="input input-bordered w-full"
+          className="input input-bordered rounded-md w-full"
           required
         />
        
@@ -78,13 +78,13 @@ const CreateUserForm = () => {
           type="text"
           placeholder="Company Name"
           name="companyName"
-          className="input input-bordered w-full"
+          className="input input-bordered rounded-md w-full"
           required
         />
        
         <input
           type="submit"
-          className="btn bg-gray-800 text-white"
+          className="btn rounded-md border-red-600 bg-transparent w-full hover:bg-red-600 hover:text-white"
           value="Add User"
         />
       </form>
