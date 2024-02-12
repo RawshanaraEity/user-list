@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import useUsersData from "../../Hooks/useUsersData";
 
 const UserDetails = () => {
-  const allUsers = useUsersData();
   const { id } = useParams();
+  const intId = parseInt(id)
   const [user, setUser] = useState({});
 
-  useEffect(() => {
-    const findUser = allUsers?.find((data) => data?.id == id);
-    setUser(findUser);
-  }, [id, allUsers]);
+useEffect(() =>{
+    fetch(`https://dummyjson.com/users/${intId}`)
+    .then(res => res.json())
+    .then(data => setUser(data))
+    
+},[intId])
 
   return (
     <div className="container mx-auto">
@@ -28,11 +29,7 @@ const UserDetails = () => {
             <p className="font-medium">
               Address: {user?.address?.address},{user?.address?.city}
             </p>
-            <Link to={"/"}>
-              <button className="btn bg-transparent border rounded-md border-red-600 hover:bg-red-600 hover:text-white mt-5">
-                Go Back
-              </button>{" "}
-            </Link>
+           
           </div>
         </div>
       </div>

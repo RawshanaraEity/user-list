@@ -2,7 +2,7 @@
 const Banner = () => {
     return (
         <div>
-             <div className="hero h-[300px] bg-gradient-to-r from-red-50 to-blue-50 ...">
+             <div className="hero h-[300px] bg-gradient-to-r from-blue-50 to-red-50 ...">
         <div  className="hero-content container mx-auto flex-col-reverse md:flex-row-reverse justify-between">
           
           <div className="w-full text-center mx-auto">

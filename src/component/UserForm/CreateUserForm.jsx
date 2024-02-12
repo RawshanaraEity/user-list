@@ -30,7 +30,7 @@ const CreateUserForm = () => {
 
     return (
         <div>
-             <h2 className="text-2xl md:text-3xl mb-5 w-2/5 p-2 mx-auto rounded-md font-semibold border border-red-600"> Create User</h2>
+             <h2 className="text-2xl md:text-3xl mb-5 rounded-md font-semibold"> Create User</h2>
         <form
        onSubmit={handleAddUser}
         className="max-w-xl p-5 mx-5 rounded-md md:mx-auto space-y-4"
