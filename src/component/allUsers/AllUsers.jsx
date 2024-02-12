@@ -37,7 +37,6 @@ const AllUsers = () => {
 
   return (
     <div className="py-10">
-      <h2 className="mb-10 text-3xl md:text-5xl text-center font-semibold">All Users</h2>
       <div className="mb-4 mx-5 py-5 flex flex-col md:flex-row justify-between items-center text-center">
         <div className="flex flex-col md:flex-row justify-left ">
             {/* search field */}
@@ -71,7 +70,7 @@ const AllUsers = () => {
         {/* create user form */}
         <div>
         <button
-            className="btn rounded bg-transparent border-red-600 text-xl  px-5 mt-3 md:mt-0"
+            className="btn rounded bg-transparent border-red-600 text-lg  px-5 mt-3 md:mt-0"
             onClick={() => document.getElementById("my_modal_3").showModal()}
           >
            Create User

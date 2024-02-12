@@ -8,7 +8,7 @@ const UserCard = ({ user }) => {
   return (
     <div>
       <div className="card bg-base-100 border hover:shadow-xl">
-        <figure className="px-5 pt-10 ">
+        <figure className="px-5 pt-10 h-44 w-44 mx-auto mt-8 rounded-full border-2 border-red-600 ">
           <img src={image} alt="Image" className="h-48 rounded-lg " />
         </figure>
         <div className="text-center  pt-10  h-48">
