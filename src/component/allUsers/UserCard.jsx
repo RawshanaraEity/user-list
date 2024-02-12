@@ -13,7 +13,7 @@ const UserCard = ({ user }) => {
         </figure>
         <div className="text-center  pt-10  h-48">
           <Link to={`userDetails/${id}`}>
-            <h2 className="card-title text-2xl justify-center text-center mb-2 hover:text-blue-600 hover:underline">
+            <h2 className="card-title text-2xl justify-center text-center mb-2 hover:text-blue-300 hover:underline">
                {firstName} {lastName}
             </h2>
           </Link>
@@ -23,7 +23,7 @@ const UserCard = ({ user }) => {
           
           <div className="flex items-center gap-2">
            <span className=""><MdForwardToInbox className="text-xl text-red-500 "></MdForwardToInbox></span>
-           <p>{email}</p>
+           <p className="my-2">{email}</p>
            </div>
            <div className="flex items-center gap-2">
            <span className=""><CiLocationOn className="text-2xl text-red-600 font-extrabold"></CiLocationOn></span>

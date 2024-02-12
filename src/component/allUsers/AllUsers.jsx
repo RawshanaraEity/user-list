@@ -37,7 +37,7 @@ const AllUsers = () => {
 
   return (
     <div className="py-10">
-      <h2 className="mb-10 text-5xl text-center font-semibold">All Users</h2>
+      <h2 className="mb-10 text-3xl md:text-5xl text-center font-semibold">All Users</h2>
       <div className="mb-4 py-5 flex flex-col lg:flex-row justify-center items-center text-center">
         <div className="flex flex-row text-center justify-center items-center">
           <input
