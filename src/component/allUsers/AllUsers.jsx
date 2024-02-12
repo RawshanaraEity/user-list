@@ -38,7 +38,9 @@ const AllUsers = () => {
   return (
     <div className="py-10">
       <h2 className="mb-10 text-3xl md:text-5xl text-center font-semibold">All Users</h2>
-      <div className="mb-4 py-5 flex flex-col lg:flex-row justify-center items-center text-center">
+      <div className="mb-4 mx-5 py-5 flex flex-col md:flex-row justify-between items-center text-center">
+        <div className="flex flex-col md:flex-row justify-left ">
+            {/* search field */}
         <div className="flex flex-row text-center justify-center items-center">
           <input
             type="text"
@@ -52,11 +54,12 @@ const AllUsers = () => {
             <CiSearch className=" text-white text-xl"></CiSearch>
           </button>
         </div>
+        {/* select field */}
         <div>
           <select
             value={sortBy}
             onChange={handleSortChange}
-            className="lg:ml-2 px-4 py-3 mt-3 lg:mt-0 border rounded-md focus:outline-none focus:border-red-500"
+            className="lg:ml-2 px-4 py-3 mt-3 md:mt-0 border rounded-md focus:outline-none focus:border-red-500"
           >
             <option value="">Default</option>
             <option value="firstName">Name</option>
@@ -64,14 +67,32 @@ const AllUsers = () => {
             <option value="company">Company Name</option>
           </select>
         </div>
+        </div>
+        {/* create user form */}
+        <div>
+        <button
+            className="btn rounded bg-transparent border-red-600 text-xl  px-5 mt-3 md:mt-0"
+            onClick={() => document.getElementById("my_modal_3").showModal()}
+          >
+           Create User
+          </button>
+          <dialog id="my_modal_3" className="modal">
+            <div className="modal-box w-11/12 max-w-2xl -z-0 p-10">
+              <form method="dialog">
+                {/* close modal button */}
+                <button className="btn btn-lg btn-circle btn-ghost absolute right-2 top-2">
+                  ✕
+                </button>
+              </form>
+              <CreateUserForm></CreateUserForm>
+            </div>
+          </dialog>
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-5">
         {sortedUsers.map((user) => (
           <UserCard key={user.id} user={user} />
         ))}
-      </div>
-      <div className="text-center my-10">
-       <CreateUserForm></CreateUserForm>
       </div>
     </div>
   );

@@ -1,7 +1,5 @@
 import toast from "react-hot-toast";
 
-
-
 const CreateUserForm = () => {
 
     const handleAddUser = event =>{
@@ -32,7 +30,7 @@ const CreateUserForm = () => {
 
     return (
         <div>
-             <h2 className="text-3xl md:text-5xl mb-5 font-semibold"> Create User Form</h2>
+             <h2 className="text-2xl md:text-4xl mb-5 font-semibold"> Create User Form</h2>
         <form
        onSubmit={handleAddUser}
         className="max-w-xl p-5 mx-5 border hover:shadow-xl rounded-xl md:mx-auto space-y-4"

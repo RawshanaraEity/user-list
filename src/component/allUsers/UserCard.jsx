@@ -13,7 +13,7 @@ const UserCard = ({ user }) => {
         </figure>
         <div className="text-center  pt-10  h-48">
           <Link to={`userDetails/${id}`}>
-            <h2 className="card-title text-2xl justify-center text-center mb-2 hover:text-blue-300 hover:underline">
+            <h2 className="card-title text-2xl justify-center text-center mb-2 hover:text-red-600">
                {firstName} {lastName}
             </h2>
           </Link>
