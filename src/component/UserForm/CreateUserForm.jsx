@@ -1,6 +1,9 @@
 import toast from "react-hot-toast";
+import useUsersData from "../../Hooks/useUsersData";
 
 const CreateUserForm = () => {
+
+    const allUsers = useUsersData()
 
     const handleAddUser = event =>{
         event.preventDefault();
@@ -28,11 +31,12 @@ const CreateUserForm = () => {
           body: JSON.stringify(user)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data =>  [...allUsers].push(data) )
         toast.success("New User Added Successfully")
             form.reset()
             
       }
+      console.log(allUsers);
 
 
     return (
