@@ -12,7 +12,7 @@ const UserCard = ({ user }) => {
           <img src={image} alt="Image" className="h-48 rounded-lg " />
         </figure>
         <div className="text-center  pt-10  h-48">
-          <Link to={`users/${id}`}>
+          <Link to={`/users/${id}`}>
             <h2 className="card-title text-2xl justify-center text-center mb-2 hover:text-red-600">
               {firstName} {lastName}
             </h2>
