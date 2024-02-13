@@ -31,12 +31,12 @@ const CreateUserForm = () => {
           body: JSON.stringify(user)
         })
         .then(res => res.json())
-        .then(data =>  [...allUsers].push(data) )
+        .then(data =>  console.log(data) )
         toast.success("New User Added Successfully")
-            form.reset()
+        form.reset()
             
       }
-      console.log(allUsers);
+    //   console.log(allUsers);
 
 
     return (

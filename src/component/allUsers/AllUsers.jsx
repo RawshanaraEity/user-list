@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import UserCard from "./UserCard";
 import useUsersData from "../../Hooks/useUsersData";
 import { CiSearch } from "react-icons/ci";
@@ -14,6 +14,7 @@ const AllUsers = () => {
   const filteredUsers = allUsers?.filter((user) =>
     user?.firstName?.toLowerCase().includes(searchName.toLowerCase())
   );
+
 
   const sortedUsers = [...filteredUsers].sort((a, b) => {
     if (sortBy === "firstName") {
