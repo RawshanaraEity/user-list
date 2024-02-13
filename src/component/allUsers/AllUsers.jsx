@@ -1,20 +1,20 @@
 import { useState } from "react";
 import UserCard from "./UserCard";
-import useUsersData from "../../Hooks/useUsersData";
 import { CiSearch } from "react-icons/ci";
 import CreateUserForm from "../UserForm/CreateUserForm";
+import useUsersData from "../../Hooks/useUsersData";
+import toast from "react-hot-toast";
 
 const AllUsers = () => {
   const [searchName, setSearchName] = useState("");
   const [sortBy, setSortBy] = useState("");
 
-  const allUsers = useUsersData();
-  
+  const { allUsers, setAllUsers } = useUsersData();
+  console.log(allUsers);
 
   const filteredUsers = allUsers?.filter((user) =>
     user?.firstName?.toLowerCase().includes(searchName.toLowerCase())
   );
-
 
   const sortedUsers = [...filteredUsers].sort((a, b) => {
     if (sortBy === "firstName") {
@@ -34,6 +34,40 @@ const AllUsers = () => {
   const handleSortChange = (e) => {
     setSortBy(e.target.value);
   };
+
+  const handleAddUser = async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const firstName = form.firstName.value;
+    const lastName = form.lastName.value;
+    const image = form.image.value;
+    const email = form.email.value;
+    const address = {
+      address: form.address.value,
+      city: form.city.value,
+    };
+
+    const company = {
+      name: form.companyName.value,
+    };
+    const user = { image, firstName, lastName, email, address, company };
+    // console.log(user)
+
+    fetch("https://dummyjson.com/users/add", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setAllUsers((prevUsers) => [data, ...prevUsers]);
+        toast.success("New User Added Successfully");
+        form.reset();
+      });
+  };
+  console.log(allUsers);
 
   return (
     <div className="py-10 container mx-auto">
@@ -69,20 +103,20 @@ const AllUsers = () => {
         {/* create user form */}
         <div>
           <button
-            className="btn rounded bg-transparent border-red-600 hover:bg-red-600 hover:text-white text-lg  px-5 mt-3 md:mt-0"
+            className="btn font-normal rounded bg-transparent border-red-600 hover:bg-red-600 hover:text-white text-lg  px-5 mt-3 md:mt-0"
             onClick={() => document.getElementById("my_modal_3").showModal()}
           >
             Create User
           </button>
           <dialog id="my_modal_3" className="modal">
-            <div className="modal-box w-11/12 max-w-2xl -z-0 p-10">
+            <div className="modal-box w-11/12 max-w-2xl -z-0 ">
               <form method="dialog">
                 {/* close modal button */}
-                <button className="btn btn-lg btn-circle btn-ghost absolute right-2 top-2">
+                <button className="btn btn-md btn-circle absolute right-2 top-4">
                   ✕
                 </button>
               </form>
-              <CreateUserForm></CreateUserForm>
+              <CreateUserForm handleAddUser={handleAddUser} />
             </div>
           </dialog>
         </div>
