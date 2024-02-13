@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path:'/userDetails/:id',
+        path:'/users/:id',
         element:<UserDetails></UserDetails>
       }
     ]
@@ -33,10 +33,8 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
         <RouterProvider router={router} />
-     
       <Toaster 
       position='top-right'
        />
-      
   </React.StrictMode>,
 )

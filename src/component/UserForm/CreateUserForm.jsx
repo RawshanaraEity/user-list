@@ -9,12 +9,18 @@ const CreateUserForm = () => {
         const lastName = form.lastName.value;
         const image = form.image.value;
         const email = form.email.value;
-        const address = form.address.value;
-        const companyName = form.companyName.value;
-        const user = {image, firstName, lastName, email, address, companyName}
+        const address = {
+        address: form.address.value,
+        city: form.city.value,
+        }
+       
+        const company = {
+            name: form.companyName.value
+        }
+        const user = {image, firstName, lastName, email, address, company}
         // console.log(user)
     
-        fetch('https://dummyjson.com/user/post', {
+        fetch('https://dummyjson.com/users/add', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
@@ -22,6 +28,7 @@ const CreateUserForm = () => {
           body: JSON.stringify(user)
         })
         .then(res => res.json())
+        .then(data => console.log(data))
         toast.success("New User Added Successfully")
             form.reset()
             
@@ -68,8 +75,15 @@ const CreateUserForm = () => {
 
         <input
           type="text"
-          placeholder="Address(Street, Suite, City)"
+          placeholder="Address"
           name="address"
+          className="input input-bordered rounded-md w-full"
+          required
+        />
+        <input
+          type="text"
+          placeholder="City"
+          name="city"
           className="input input-bordered rounded-md w-full"
           required
         />

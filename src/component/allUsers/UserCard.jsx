@@ -12,25 +12,28 @@ const UserCard = ({ user }) => {
           <img src={image} alt="Image" className="h-48 rounded-lg " />
         </figure>
         <div className="text-center  pt-10  h-48">
-          <Link to={`userDetails/${id}`}>
+          <Link to={`users/${id}`}>
             <h2 className="card-title text-2xl justify-center text-center mb-2 hover:text-red-600">
-               {firstName} {lastName}
+              {firstName} {lastName}
             </h2>
           </Link>
-        
+
           <h2 className="font-medium">{user?.company?.name} </h2>
           <div className="card-actions items-center text-center gap-0 flex-col">
-          
-          <div className="flex items-center gap-2">
-           <span className=""><MdForwardToInbox className="text-xl text-red-500 "></MdForwardToInbox></span>
-           <p className="my-2">{email}</p>
-           </div>
-           <div className="flex items-center gap-2">
-           <span className=""><CiLocationOn className="text-2xl text-red-600 font-extrabold"></CiLocationOn></span>
-            <p>
-               {user?.address.address},{user?.address?.city}
-            </p>
-           </div>
+            <div className="flex items-center gap-2">
+              <span className="">
+                <MdForwardToInbox className="text-xl text-red-500 "></MdForwardToInbox>
+              </span>
+              <p className="my-2">{email}</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="">
+                <CiLocationOn className="text-2xl text-red-600 font-extrabold"></CiLocationOn>
+              </span>
+              <p>
+                {user?.address.address},{user?.address?.city}
+              </p>
+            </div>
           </div>
         </div>
       </div>
