@@ -4,13 +4,13 @@ const CreateUserForm = ({handleAddUser}) => {
 
    
     return (
-        <div>
-             <h2 className="text-2xl md:text-3xl mb-5 rounded-md font-semibold"> Create User</h2>
+        <div className="py-5">
+             <h2 className="text-2xl md:text-3xl mb-8 rounded-md font-semibold"> Create User</h2>
         <form
        onSubmit={handleAddUser}
-        className="max-w-xl  rounded-md md:mx-auto space-y-4"
+        className="max-w-xl rounded-md md:mx-auto space-y-4"
       >
-        <div className="flex gap-5">
+        <div className="flex gap-4">
         <input
           type="text"
           placeholder="First Name"
@@ -66,7 +66,7 @@ const CreateUserForm = ({handleAddUser}) => {
        
         <input
           type="submit"
-          className="btn rounded-md border-red-600 bg-transparent w-full hover:bg-red-600 hover:text-white"
+          className="btn rounded-md w-full bg-red-600 hover:bg-red-800 text-white "
           value="Add User"
         />
       </form>

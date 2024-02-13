@@ -17,8 +17,8 @@ const UserCard = ({ user }) => {
               {firstName} {lastName}
             </h2>
           </Link>
-
           <h2 className="font-medium">{user?.company?.name} </h2>
+          
           <div className="card-actions items-center text-center gap-0 flex-col">
             <div className="flex items-center gap-2">
               <span className="">

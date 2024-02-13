@@ -5,7 +5,7 @@ import CreateUserForm from "../UserForm/CreateUserForm";
 import useUsersData from "../../Hooks/useUsersData";
 import toast from "react-hot-toast";
 
-const AllUsers = () => {
+  const AllUsers = () => {
   const [searchName, setSearchName] = useState("");
   const [sortBy, setSortBy] = useState("");
 
@@ -82,7 +82,7 @@ const AllUsers = () => {
               onChange={handleSearchChange}
               className="px-4 py-[11px]  border rounded-md rounded-r-none focus:outline-none border-red-600"
             />
-            <button className="btn mr-5 rounded-l-none outline-none border-none bg-red-600">
+            <button className="btn mr-5 rounded-l-none outline-none border-none bg-red-600 hover:bg-red-800">
               <CiSearch className=" text-white text-xl"></CiSearch>
             </button>
           </div>
@@ -100,7 +100,8 @@ const AllUsers = () => {
             </select>
           </div>
         </div>
-        {/* create user form */}
+
+        {/* create user form with modal*/}
         <div>
           <button
             className="btn font-normal rounded bg-transparent border-red-600 hover:bg-red-600 hover:text-white text-lg  px-5 mt-3 md:mt-0"
@@ -109,7 +110,7 @@ const AllUsers = () => {
             Create User
           </button>
           <dialog id="my_modal_3" className="modal">
-            <div className="modal-box w-11/12 max-w-2xl -z-0 ">
+            <div className="modal-box w-11/12 max-w-2xl">
               <form method="dialog">
                 {/* close modal button */}
                 <button className="btn btn-md btn-circle absolute right-2 top-4">

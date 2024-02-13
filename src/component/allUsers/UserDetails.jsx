@@ -18,12 +18,12 @@ const UserDetails = () => {
         <figure className="p-10">
           <img src={user?.image} alt="Album" />
         </figure>
-        <div className="flex flex-col justify-center px-5 md:px-0 md:pl-10">
-          <h2 className=" text-3xl font-bold">
+        <div className="flex flex-col justify-center items-center md:items-start px-5 md:px-0 md:pl-10">
+          <h2 className="text-2xl md:text-3xl font-bold">
             Name: {user?.firstName} {user?.lastName}
           </h2>
           <p className="font-medium my-2">Company: {user?.company?.name} </p>
-          <div className="card-actions flex-col">
+          <div className="card-actions flex-col items-center md:items-start">
             <h2 className="font-medium">Email: {user?.email} </h2>
             <p className="font-medium">
               Address: {user?.address?.address},{user?.address?.city}
